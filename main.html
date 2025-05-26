@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+<body>
+
+<div id='bod'>
+    <h1>JV Nebula radje</h1>
+
+
+<div id="namenkiezen">
+    <div id="inputs" style="display:flex">
+        <div id="toevoegendiv">
+        <h2>Naam<br> toevoegen:</h2><br>
+        <form name="toevoegen">
+        <input type="text" id="naamToevoegen">
+        
+        </form>
+        <button id="naamToevoegenBut" onclick="voegNaamToe()">Aan de lijst toevoegen</button>    
+    </div>
+        
+        <div class="form">
+            
+
+            <h2>Afwezig?</h2>
+            <form name="afwezig">
+                <input type="checkbox" id="Jasper0" name="afwezig" value="Jasper">
+                <label for="Jasper0">Jasper</label>
+                <br>
+                <input type="checkbox" id="Jeppe0" name="afwezig" value="Jeppe">
+                <label for="Jeppe0">Jeppe</label>
+                <br>
+                <input type="checkbox" id="Jessie0" name="afwezig" value="Jessie">
+                <label for="Jessie0">Jessie</label>
+                <br>
+                <input type="checkbox" id="Kevin0" name="afwezig" value="Kevin">
+                <label for="Kevin0">Kevin</label>
+                <br>
+                <input type="checkbox" id="Laura0" name="afwezig" value="Laura">
+                <label for="Laura0">Laura</label>
+                <br>
+                <input type="checkbox" id="Lowijs0" name="afwezig" value="Lowijs">
+                <label for="Lowijs0">Lowijs</label>
+                <br>
+                <input type="checkbox" id="Milan0" name="afwezig" value="Milan">
+                <label for="Milan0">Milan</label>
+                <br>
+                <input type="checkbox" id="Nasi0" name="afwezig" value="Nasi">
+                <label for="Nasi0">Nasi</label>
+                <br>
+                <input type="checkbox" id="Senne0" name="afwezig" value="Senne">
+                <label for="Senne0">Senne</label>
+                <br>
+                <input type="checkbox" id="Sharon0" name="afwezig" value="Sharon">
+                <label for="Sharon0">Sharon</label>
+                <br>
+                <input type="checkbox" id="Steen0" name="afwezig" value="Steen">
+                <label for="Steen0">Steen</label>
+                <br>
+                <input type="checkbox" id="Toto0" name="afwezig" value="Toto">
+                <label for="Toto0">Toto</label>
+                <br>
+                <input type="checkbox" id="Zoë0" name="afwezig" value="Zoë">
+                <label for="Zoë0">Zoë</label>
+            </form>
+            </div>
+        <div class="form">
+        <h2>Boodschappen?</h2>
+        <form name="boodschappen" id="boodschappenForm">
+            <input type="checkbox" id="Jasper1" name="boodschappen" value="Jasper">
+            <label for="Jasper1">Jasper</label>
+            <br>
+            <input type="checkbox" id="Jeppe1" name="boodschappen" value="Jeppe">
+            <label for="Jeppe1">Jeppe</label>
+            <br>
+            <input type="checkbox" id="Jessie1" name="boodschappen" value="Jessie">
+            <label for="Jessie1">Jessie</label>
+            <br>
+            <input type="checkbox" id="Kevin1" name="boodschappen" value="Kevin">
+            <label for="Kevin1">Kevin</label>
+            <br>
+            <input type="checkbox" id="Laura1" name="boodschappen" value="Laura">
+            <label for="Laura1">Laura</label>
+            <br>
+            <input type="checkbox" id="Lowijs1" name="boodschappen" value="Lowijs">
+            <label for="Lowijs1">Lowijs</label>
+            <br>
+            <input type="checkbox" id="Milan1" name="boodschappen" value="Milan">
+            <label for="Milan1">Milan</label>
+            <br>
+            <input type="checkbox" id="Nasi1" name="boodschappen" value="Nasi">
+            <label for="Nasi1">Nasi</label>
+            <br>
+            <input type="checkbox" id="Senne1" name="boodschappen" value="Senne">
+            <label for="Senne1">Senne</label>
+            <br>
+            <input type="checkbox" id="Sharon1" name="boodschappen" value="Sharon">
+            <label for="Sharon1">Sharon</label>
+            <br>
+            <input type="checkbox" id="Steen1" name="boodschappen" value="Steen">
+            <label for="Steen1">Steen</label>
+            <br>
+            <input type="checkbox" id="Toto1" name="boodschappen" value="Toto">
+            <label for="Toto1">Toto</label>
+            <br>
+            <input type="checkbox" id="Zoë1" name="boodschappen" value="Zoë">
+            <label for="Zoë1">Zoë</label>
+        </form>
+        </div>
+        <div class="form">
+        <h2>Gekookt?</h2>
+        <form id="gekooktForm">
+            <input type="checkbox" id="Jasper2" name="koken" value="Jasper">
+            <label for="Jasper2">Jasper</label>
+            <br>
+            <input type="checkbox" id="Jeppe2" name="koken" value="Jeppe">
+            <label for="Jeppe2">Jeppe</label>
+            <br>
+            <input type="checkbox" id="Jessie2" name="koken" value="Jessie">
+            <label for="Jessie2">Jessie</label>
+            <br>
+            <input type="checkbox" id="Kevin2" name="koken" value="Kevin">
+            <label for="Kevin2">Kevin</label>
+            <br>
+            <input type="checkbox" id="Laura2" name="koken" value="Laura">
+            <label for="Laura2">Laura</label>
+            <br>
+            <input type="checkbox" id="Lowijs2" name="koken" value="Lowijs">
+            <label for="Lowijs2">Lowijs</label>
+            <br>
+            <input type="checkbox" id="Milan2" name="koken" value="Milan">
+            <label for="Milan2">Milan</label>
+            <br>
+            <input type="checkbox" id="Nasi2" name="koken" value="Nasi">
+            <label for="Nasi2">Nasi</label>
+            <br>
+            <input type="checkbox" id="Senne2" name="koken" value="Senne">
+            <label for="Senne2">Senne</label>
+            <br>
+            <input type="checkbox" id="Sharon2" name="koken" value="Sharon">
+            <label for="Sharon2">Sharon</label>
+            <br>
+            <input type="checkbox" id="Steen2" name="koken" value="Steen">
+            <label for="Steen2">Steen</label>
+            <br>
+            <input type="checkbox" id="Toto2" name="koken" value="Toto">
+            <label for="Toto2">Toto</label>
+            <br>
+            <input type="checkbox" id="Zoë2" name="koken" value="Zoë">
+            <label for="Zoë2">Zoë</label>
+        </form>
+        </div>
+    </div>
+
+    <button class="draai" onclick="validateForm()">Begin met draaien!</button>
+</div>
+    <div id="buttons" style="display: none">
+        <canvas id="radjeCanvas" width="907" height="897" style="margin:auto;" onclick="random_int()"></canvas>
+        <button type="button" id="terugniet" onclick="terugNietReset()">Ga terug maar niet resetten</button>
+        <button type="button" id="terugwel" onclick="terugWelReset()">Ga terug en reset</button>
+        <div id="nugedraaiddiv" style="display:none">
+            <h1 id="nugedraaid" ></h1>
+            
+            <div id="afwasbakdiv">
+                <button type="button" id="afwas" class="afwasbakbut" onclick="afwas()">Afwas</button>
+                <button type="button" id="bak" class="afwasbakbut" onclick="bak()">Bak</button>
+            </div>
+        </div>
+
+        <div id='klikDraaienText' onclick="random_int()">
+            <svg width="220" height="250" viewBox="80 145 190 110" style="background:none;">
+                <!-- Top arc -->
+                <path id="curve" fill="transparent"
+                      d="M100,200
+                         A50,50 0 0,1 250,200" />
+              
+                <!-- Bottom arc (mirrored) -->
+                <path id="curve2" fill="transparent"
+                      d="M100,200
+                         A50,50 0 0,0 250,200" />
+              
+                         
+                <!-- Top text -->
+                <text fill="white" style="font-size: xx-large;" dy="-5">
+                    <textPath startOffset="50%" text-anchor="middle" href="#curve" textLength="80%">
+                    Klik om te
+                    </textPath>
+                </text>
+              
+                <!-- Bottom text -->
+                <text fill="white" style="font-size: xx-large;" dy="25">
+                  <textPath startOffset="50%" text-anchor="middle" href="#curve2" textLength="60%">
+                    draaien
+                  </textPath>
+                </text>
+              </svg>
+        </div>
+
+        <div id="gedraaidenamen">
+            <h2 style="display: inline-block; margin-bottom: 0;">Gedraaide namen:</h2> 
+            <button id="resetGedraaideNamen" onclick="resetGedraaideNamen()">Reset</button>
+            <p id="display"></p>
+        </div>
+
+        <p id="display2" style="display: none"></p>
+        <button type="button" id="disp2button" onclick="displ2()">Namenlijst</button>
+
+
+    </div>
+
+    
+
+
+</div>
+
+<p id="credits">Gemaakt door Jessie Alders</p>
+
+<script src="script.js"></script>
+
+</body>
+</html> 
+

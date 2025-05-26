@@ -1,0 +1,94 @@
+* {
+    background-color: #1b1737;
+    color: rgb(234, 228, 243);
+}
+
+h1 {
+    font-family: system-ui;
+    font-size: xx-large;
+}
+
+#bod {
+    width: 55%;
+    margin: auto;
+    margin-top: 4%;
+    border: 3px solid #392e7b;
+    padding: 3%;
+    text-align: center;
+}
+
+#naamToevoegen {
+    border: 1px solid white;
+    width:80%;
+}
+
+.draai {
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    width: 200px;
+    border: 3px solid black;
+    background-color: darkslateblue;
+}
+
+#nugedraaiddiv {
+    position: absolute;
+    top: 37%;
+    border: darkslateblue 1px solid;
+    padding: 2%;
+    left: 50%;
+    transform: translateX(-50%);    
+    width: 204px;
+}
+
+.afwasbakbut {
+    width: 100px;
+    height: 100px;
+    font-size: 25px;
+    font-family: system-ui;
+    background-color: #361e71;
+}
+#afwasbakdiv{
+    display: none;
+}
+
+#radjeCanvas {
+    width: 500px;
+    margin: auto;
+}
+
+#toevoegendiv {
+    margin-right: 5%;
+}
+
+.form {
+    width: 160px;
+    margin: auto;
+}
+
+#klikDraaienText {
+    position: absolute;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 45%;
+    background: none;
+    font-size: xx-large;
+    font-family: sans-serif;
+
+}
+
+#inputs {
+    display: flex;
+    width: 55%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+#gedraaidenamen {
+    text-align: left;
+}
+
+#credits {
+    text-align: center;
+}
