@@ -1,5 +1,6 @@
-const alleNamen = ["Jasper",   "Jeppe", "Jessie",   "Kevin",   "Laura",  "Lowijs", "Milan",  "Nasi",  "Senne",  "Sharon",  "Steen",  
-   "Toto", "Zoë", "Jasper","Jeppe","Jessie","Kevin","Laura","Lowijs","Milan","Nasi","Senne","Sharon","Steen","Toto","Zoë"]
+const alleNamen = ["Jasper", "Jeppe", "Jessie", "Kevin", "Laura", "Lowijs", "Milan", "Nasi", "Senne", "Sharon", "Steen", "Toto", "Zoe", 
+                   "Jasper", "Jeppe", "Jessie", "Kevin", "Laura", "Lowijs", "Milan", "Nasi", "Senne", "Sharon", "Steen", "Toto", "Zoe"
+]
 let names = [...alleNamen];
 let numlist = [];
 let extraNamen = [];
@@ -7,6 +8,29 @@ let enableDraaien;
 const canvas = document.getElementById("radjeCanvas");
 const ctx = canvas.getContext("2d");
 
+function incrementTotal() {
+  while (!window.myApp || typeof window.myApp.incrementTotal !== "function") {
+  }
+  return window.myApp.incrementTotal();
+}
+
+function incrementCount(name) {
+  while (!window.myApp || typeof window.myApp.incrementCount !== "function") {
+  }
+  return window.myApp.incrementCount(name);
+}
+
+function incrementAfwas(name) {
+  while (!window.myApp || typeof window.myApp.incrementAfwas !== "function") {
+  }
+  return window.myApp.incrementAfwas(name);
+}
+
+function incrementBak(name) {
+  while (!window.myApp || typeof window.myApp.incrementBak !== "function") {
+  }
+  return window.myApp.incrementBak(name);
+}
 
 function show(id) {
    document.getElementById(id).style = 'display: block'
@@ -134,6 +158,9 @@ function afwas() {
   hide('klikDraaienText');
    tekenRadje(finishedAngle)
    enableDraaien = true;
+   incrementTotal();
+   incrementCount(naam_gedraaid);
+   incrementAfwas(naam_gedraaid);
 }
 
 function bak() {
@@ -142,6 +169,9 @@ function bak() {
   show('klikDraaienText');
   tekenRadje(finishedAngle);
   enableDraaien = true;
+  incrementTotal();
+  incrementCount(naam_gedraaid);
+  incrementBak(naam_gedraaid);
 }
 
 function terugNietReset() {
