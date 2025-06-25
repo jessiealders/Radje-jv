@@ -8,28 +8,10 @@ let enableDraaien;
 const canvas = document.getElementById("radjeCanvas");
 const ctx = canvas.getContext("2d");
 
-function incrementTotal() {
-  while (!window.myApp || typeof window.myApp.incrementTotal !== "function") {
+function increment(name, field) {
+  while (!window.myApp || typeof window.myApp.increment !== "function") {
   }
-  return window.myApp.incrementTotal();
-}
-
-function incrementCount(name) {
-  while (!window.myApp || typeof window.myApp.incrementCount !== "function") {
-  }
-  return window.myApp.incrementCount(name);
-}
-
-function incrementAfwas(name) {
-  while (!window.myApp || typeof window.myApp.incrementAfwas !== "function") {
-  }
-  return window.myApp.incrementAfwas(name);
-}
-
-function incrementBak(name) {
-  while (!window.myApp || typeof window.myApp.incrementBak !== "function") {
-  }
-  return window.myApp.incrementBak(name);
+  return window.myApp.increment(name, field);
 }
 
 function show(id) {
@@ -156,11 +138,12 @@ function afwas() {
   hide('afwasbakdiv');
   hide('nugedraaiddiv');
   hide('klikDraaienText');
-   tekenRadje(finishedAngle)
-   enableDraaien = true;
-   incrementTotal();
-   incrementCount(naam_gedraaid);
-   incrementAfwas(naam_gedraaid);
+  tekenRadje(finishedAngle)
+  enableDraaien = true;
+  increment(naam_gedraaid, "afwas");
+  increment(naam_gedraaid, "count");
+  increment("Total", "afwas");
+  increment("Total", "count");
 }
 
 function bak() {
@@ -169,9 +152,10 @@ function bak() {
   show('klikDraaienText');
   tekenRadje(finishedAngle);
   enableDraaien = true;
-  incrementTotal();
-  incrementCount(naam_gedraaid);
-  incrementBak(naam_gedraaid);
+  increment(naam_gedraaid, "bak");
+  increment(naam_gedraaid, "count");
+  increment("Total", "bak");
+  increment("Total", "count");
 }
 
 function terugNietReset() {

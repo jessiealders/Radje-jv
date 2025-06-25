@@ -15,14 +15,14 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 console.log("Document added!");
 
-const alleNamen = ["Jasper", "Jeppe", "Jessie", "Kevin", "Laura", "Lowijs", "Milan", "Nasi", "Senne", "Sharon", "Steen", "Toto", "Zoe"]
+const alleNamen = ["Total", "Jasper", "Jeppe", "Jessie", "Kevin", "Laura", "Lowijs", "Milan", "Nasi", "Senne", "Sharon", "Steen", "Toto", "Zoe"]
 
-initializeDatabase();
+// initializeDatabase();
 window.myApp = window.myApp || {};
 
 function initializeDatabase() {
-  set(ref(db, '/'), {totalCount : 0});
   alleNamen.forEach(setName);
+
   function setName(name) {
     set(ref(db, '/' + name), {count : 0, afwas: 0, bak: 0});
   }
@@ -49,62 +49,12 @@ function listenName(name) {
   });
 }
 
-const countRef = ref(db, 'totalCount');
-onValue(countRef, (snapshot) => {
-  const currentCount = snapshot.val();
-  console.log("Total count:", currentCount);
-});
-
-window.myApp.incrementTotal = function() {
-  get(countRef)
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        update(ref(db), { totalCount: snapshot.val() + 1 });
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error("Error getting data:", error);
-    });
-}
-
-window.myApp.incrementCount = function(name) {
-  const nameRef = ref(db, name + "/count");
+window.myApp.increment = function(name, field) {
+  const nameRef = ref(db, name + "/" + field);
   get(nameRef)
     .then((snapshot) => {
       if (snapshot.exists()) {
-        update(ref(db, name), { count: snapshot.val() + 1 });
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error("Error getting data:", error);
-    });
-}
-
-window.myApp.incrementAfwas = function(name) {
-  const nameRef = ref(db, name + "/afwas");
-  get(nameRef)
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        update(ref(db, name), { afwas: snapshot.val() + 1 });
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error("Error getting data:", error);
-    });
-}
-
-window.myApp.incrementBak = function(name) {
-  const nameRef = ref(db, name + "/bak");
-  get(nameRef)
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        update(ref(db, name), { bak: snapshot.val() + 1 });
+        update(ref(db, name), { [field]: snapshot.val() + 1 });
       } else {
         console.log("No data available");
       }
