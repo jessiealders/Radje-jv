@@ -13,22 +13,20 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-console.log("Document added!");
-
+window.myApp = window.myApp || {};
 const alleNamen = ["Total", "Jasper", "Jeppe", "Jessie", "Kevin", "Laura", "Lowijs", "Milan", "Nasi", "Senne", "Sharon", "Steen", "Toto", "Zoe"]
 
 // initializeDatabase();
-window.myApp = window.myApp || {};
+alleNamen.forEach(listenName);
 
 function initializeDatabase() {
   alleNamen.forEach(setName);
-
-  function setName(name) {
-    set(ref(db, '/' + name), {count : 0, afwas: 0, bak: 0});
-  }
 }
 
-alleNamen.forEach(listenName);
+function setName(name) {
+  set(ref(db, '/' + name), {count : 0, afwas: 0, bak: 0});
+}
+
 function listenName(name) {
   const nameRef = ref(db, name + "/count");
   onValue(nameRef, (snapshot) => {
@@ -55,6 +53,7 @@ window.myApp.increment = function(name, field) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         update(ref(db, name), { [field]: snapshot.val() + 1 });
+        update(ref(db, "Total"), { [field]: snapshot.val() + 1 });
       } else {
         console.log("No data available");
       }
