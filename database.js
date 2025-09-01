@@ -16,11 +16,13 @@ const db = getDatabase(app);
 window.myApp = window.myApp || {};
 const alleNamen = ["Total", "Jasper", "Jeppe", "Jessie", "Kevin", "Laura", "Lowijs", "Milan", "Nasi", "Senne", "Sharon", "Steen", "Toto", "Zoe"]
 
-// initializeDatabase();
-alleNamen.forEach(listenName);
+initializeDatabase(false);
 
-function initializeDatabase() {
-  alleNamen.forEach(setName);
+function initializeDatabase(reset) {
+  alleNamen.forEach(listenName);
+  if (reset) {
+    alleNamen.forEach(setName);
+  }
 }
 
 function setName(name) {
@@ -53,7 +55,6 @@ window.myApp.increment = function(name, field) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         update(ref(db, name), { [field]: snapshot.val() + 1 });
-        update(ref(db, "Total"), { [field]: snapshot.val() + 1 });
       } else {
         console.log("No data available");
       }

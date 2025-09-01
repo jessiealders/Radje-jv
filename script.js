@@ -142,6 +142,8 @@ function afwas() {
   enableDraaien = true;
   increment(naam_gedraaid, "afwas");
   increment(naam_gedraaid, "count");
+  increment("Total", "afwas");
+  increment("Total", "count");
 }
 
 function bak() {
@@ -152,6 +154,8 @@ function bak() {
   enableDraaien = true;
   increment(naam_gedraaid, "bak");
   increment(naam_gedraaid, "count");
+  increment("Total", "bak");
+  increment("Total", "count");
 }
 
 function terugNietReset() {
